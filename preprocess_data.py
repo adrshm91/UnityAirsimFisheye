@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import time
 
 work_dir = os.path.dirname(os.path.realpath('__file__'))
-data_dir = work_dir + '\\datasets\\2019-02-02-11-31-07 - Day - No Traffic\\'
+data_dir = work_dir + '\\datasets\\2019-02-03-19-40-16\\'
 
 
 class Dataset(object):
@@ -52,7 +52,7 @@ def get_semantic_map_tensor(path):
     palette = np.array(palette)
     with tf.Session() as sess:
         for step, file in enumerate(file_names):
-            start = time.time()
+            #start = time.time()
             if step % 10 == 0:
                 print("Step %d/%d" %(step, len(file_names)))
             file_name = file.split(path)[1].split('_')[0]
@@ -68,8 +68,10 @@ def get_semantic_map_tensor(path):
             class_indexes = tf.tile(class_indexes, [1, 1, 3])
             semantic_map = sess.run(class_indexes)
             cv2.imwrite(path + file_name + '_semantic.png', semantic_map)
-            end = time.time()
-            print(end - start)
+            #plt.imshow(semantic_map)
+            #plt.show()
+            #end = time.time()
+            #print(end - start)
 
 
 # Faster
