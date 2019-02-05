@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import time
 
 work_dir = os.path.dirname(os.path.realpath('__file__'))
-data_dir = work_dir + '\\datasets\\2019-02-03-19-40-16\\'
+data_dir = work_dir + '/datasets/2019-02-03-19-40-16/'
 
 
 class Dataset(object):
