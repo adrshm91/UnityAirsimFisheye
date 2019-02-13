@@ -8,8 +8,7 @@ import matplotlib.pyplot as plt
 import time
 
 work_dir = os.path.dirname(os.path.realpath('__file__'))
-data_dir = work_dir + '/datasets/2019-02-03-19-40-16/'
-
+data_dir = work_dir + '/datasets/2019-02-12-19-23-32/'
 
 class Dataset(object):
     def __init__(self, dataset_name):
@@ -79,6 +78,14 @@ get_semantic_map_tensor(data_dir)
 
 # Slower
 #get_semantic_map(data_dir)
+
+
+# file_names = glob.glob(data_dir + "*_layer.png")
+# for file_name in file_names:
+#     img = cv2.imread(file_name)
+#     plt.imshow(img)
+#     plt.show()
+
 
 
 
